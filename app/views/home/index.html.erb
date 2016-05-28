@@ -3,46 +3,21 @@
 	<p>This Q&amp;A site is dedicated to questions about history of the Universe</p>
 </div>
 <div class="container">
-	<div class="media">
-	  <div class="media-left">
-	    <a href="#">
-	      <img class="media-object" src="http://www.gravatar.com/avatar/424242">
-	    </a>
-	  </div>
-	  <div class="media-body">
-	    <h4 class="media-heading">user@email.com asked:</h4>
-	    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-	    <div>
-	    	<a href="/questions/12" class="btn btn-success btn-xs">View Answers</a>
-	    </div>
-	  </div>
-	</div>
-	<div class="media">
-	  <div class="media-left">
-	    <a href="#">
-	      <img class="media-object" src="http://www.gravatar.com/avatar/424242">
-	    </a>
-	  </div>
-	  <div class="media-body">
-	    <h4 class="media-heading">user@email.com asked:</h4>
-	    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-	    <div>
-	    	<a href="/questions/12" class="btn btn-success btn-xs">View Answers</a>
-	    </div>
-	  </div>
-	</div>
-	<div class="media">
-	  <div class="media-left">
-	    <a href="#">
-	      <img class="media-object" src="http://www.gravatar.com/avatar/424242">
-	    </a>
-	  </div>
-	  <div class="media-body">
-	    <h4 class="media-heading">user@email.com asked:</h4>
-	    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-	    <div>
-	    	<a href="/questions/12" class="btn btn-success btn-xs">View Answers</a>
-	    </div>
-	  </div>
-	</div>
-</div>
+  <% @questions.each do |q| %>
+		<div class="media">
+		  <div class="media-left">
+		    <a href="#">
+		      <img class="media-object" src="<%= q.gravatar %>">
+		    </a>
+		  </div>
+		  <div class="media-body">
+		    <h4 class="media-heading"><%= q.email %> asked:</h4>
+		     <%=q.body %>
+		    <div>
+		    	<a href="/questions/12" class="btn btn-success btn-xs">View Answers</a>
+		    </div>
+		  </div>
+		</div>
+	<%end%>
+</div>	
+	
